@@ -53,7 +53,18 @@ def populate_board(board):
             continue
 
 def make_guess(board):
-    
+    while True:
+        try:
+            x = int(input(f"Enter row (0-{board.size-1}): "))
+            y = int(input(f"Enter column (0-{board.size-1}): "))
+
+            if valid_coordinates(x, y, board):
+                return x, y
+            else:
+                print("Invalid guess. Try again.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+
 
 def play_game(computer_board, player_board):
 
