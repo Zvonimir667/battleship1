@@ -76,7 +76,7 @@ def random_point(size):
     Returns:
     - int: A random coordinate within the board size.
     """
-	return randint(0, size - 1)
+    return randint(0, size - 1)
 
 
 def valid_coordinates(x, y, board):
@@ -90,7 +90,7 @@ def valid_coordinates(x, y, board):
 
     Returns:
     - bool: True if the coordinates are valid, False otherwise.
-    """
+    """"
     size = board.size
     return 0 <= x < size and 0 <= y < size and (x, y) not in board.guesses
 
@@ -154,12 +154,13 @@ def play_game(computer_board, player_board):
             scores["player"] += 1
 
         if scores["player"] == player_board.num_ships:
-            print("\nCongratulations! You sunk all the computer's ships. You win!")
+            print("\nYou sunk all the computer's ships. You win!")
             break
 
         print("\nComputer's Board:")
         computer_board.print()
-        x, y = random_point(computer_board.size), random_point(computer_board.size)
+        x = random_point(computer_board.size)
+        y = random_point(computer_board.size)
         result = player_board.guess(x, y)
         print(f"\nComputer's guess: ({x}, {y}) - {result}")
 
