@@ -90,7 +90,7 @@ def valid_coordinates(x, y, board):
 
     Returns:
     - bool: True if the coordinates are valid, False otherwise.
-    """"
+    """
     size = board.size
     return 0 <= x < size and 0 <= y < size and (x, y) not in board.guesses
 
