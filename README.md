@@ -21,6 +21,9 @@ Player and computer take turn in guessing and winner is the one who sinks all op
 
 - No errors were retured when I tested a code throught a PEP8 linter
 
+![screenshot1](/assets/images/pic1)
+
+
 ## Deployment 
 
 - The steps to deploy are as follows:

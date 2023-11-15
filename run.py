@@ -127,12 +127,15 @@ def make_guess(board):
             x = int(input(f"Enter row (0-{board.size-1}): "))
             y = int(input(f"Enter column (0-{board.size-1}): "))
 
-            if valid_coordinates(x, y, board):
+            if 0 <= x < board.size and 0 <= y < board.size and (x, y) not in board.guesses:
                 return x, y
             else:
                 print("Invalid guess. Try again.")
         except ValueError:
             print("Invalid input. Please enter a number.")
+        except KeyboardInterrupt:
+            print("\nGame interrupted. Exiting.")
+            exit()
 
 
 def play_game(computer_board, player_board):
